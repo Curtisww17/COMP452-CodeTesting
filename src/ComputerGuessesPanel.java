@@ -12,6 +12,22 @@ import java.util.function.Consumer;
  */
 public class ComputerGuessesPanel extends JPanel {
 
+    public void setNumGuesses(int numGuesses) {
+        this.numGuesses = numGuesses;
+    }
+
+    public void setLastGuess(int lastGuess) {
+        this.lastGuess = lastGuess;
+    }
+
+    public void setUpperBound(int upperBound) {
+        this.upperBound = upperBound;
+    }
+
+    public void setLowerBound(int lowerBound) {
+        this.lowerBound = lowerBound;
+    }
+
     private int numGuesses;
     private int lastGuess;
 
@@ -41,11 +57,8 @@ public class ComputerGuessesPanel extends JPanel {
 
         JButton lowerBtn = new JButton("Lower");
         lowerBtn.addActionListener(e -> {
-            upperBound = Math.min(upperBound, lastGuess);
 
-            lastGuess = (lowerBound + upperBound + 1) / 2;
-            numGuesses += 1;
-            guessMessage.setText("I guess " + lastGuess + ".");
+            guessMessage.setText(lowerGuess());
         });
         this.add(lowerBtn);
         lowerBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -68,11 +81,7 @@ public class ComputerGuessesPanel extends JPanel {
 
         JButton higherBtn = new JButton("Higher");
         higherBtn.addActionListener(e -> {
-            lowerBound = Math.max(lowerBound, lastGuess + 1);
-
-            lastGuess = (lowerBound + upperBound + 1) / 2;
-            numGuesses += 1;
-            guessMessage.setText("I guess " + lastGuess + ".");
+            guessMessage.setText(higherGuess());
         });
         this.add(higherBtn);
         higherBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -88,6 +97,23 @@ public class ComputerGuessesPanel extends JPanel {
                 guessMessage.setText("I guess " + lastGuess + ".");
             }
         });
+    }
+
+    public String lowerGuess(){
+        upperBound = Math.min(upperBound, lastGuess);
+
+        lastGuess = (lowerBound + upperBound + 1) / 2;
+        numGuesses += 1;
+
+        return ("I guess " + lastGuess + ".");
+    }
+
+    public String higherGuess(){
+        lowerBound = Math.max(lowerBound, lastGuess + 1);
+
+        lastGuess = (lowerBound + upperBound + 1) / 2;
+        numGuesses += 1;
+        return ("I guess " + lastGuess + ".");
     }
 
 }
