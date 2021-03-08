@@ -12,7 +12,7 @@ public class HumanGuessesPanel extends JPanel {
     private HumanGuessesGame game;
 
     public HumanGuessesPanel(JPanel cardsPanel, Consumer<GameResult> gameFinishedCallback){
-        game = new HumanGuessesGame(new Random());
+        game = new HumanGuessesGame();
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
@@ -89,7 +89,7 @@ public class HumanGuessesPanel extends JPanel {
                 guessTxt.requestFocusInWindow();
                 SwingUtilities.getRootPane(submit).setDefaultButton(submit);
 
-                game = new HumanGuessesGame(new Random());
+                game = new HumanGuessesGame();
             }
         });
     }
