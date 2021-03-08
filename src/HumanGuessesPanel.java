@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 import java.util.function.Consumer;
 
 /**
