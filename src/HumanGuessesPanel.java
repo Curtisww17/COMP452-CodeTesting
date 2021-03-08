@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 import java.util.function.Consumer;
 
 /**
@@ -11,7 +12,7 @@ public class HumanGuessesPanel extends JPanel {
     private HumanGuessesGame game;
 
     public HumanGuessesPanel(JPanel cardsPanel, Consumer<GameResult> gameFinishedCallback){
-        game = new HumanGuessesGame();
+        game = new HumanGuessesGame(new Random());
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
@@ -88,7 +89,7 @@ public class HumanGuessesPanel extends JPanel {
                 guessTxt.requestFocusInWindow();
                 SwingUtilities.getRootPane(submit).setDefaultButton(submit);
 
-                game = new HumanGuessesGame();
+                game = new HumanGuessesGame(new Random());
             }
         });
     }

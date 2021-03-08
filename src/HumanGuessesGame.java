@@ -1,5 +1,6 @@
 import java.util.Random;
 
+
 /**
  * A game where a human guesses a number between 1 and UPPER_BOUND
  * Tracks the target, the number of guesses made, and if the number has been guessed
@@ -13,9 +14,19 @@ public class HumanGuessesGame {
     private int numGuesses;
     private boolean gameIsDone; // true iff makeGuess has been called with the target value
 
-    HumanGuessesGame(){
-        Random randGen = new Random();
+    HumanGuessesGame(Random randGen){
+        //Random randGen = new Random();
         this.target = randGen.nextInt(UPPER_BOUND) + 1;
+        //this.target = target;
+
+        numGuesses = 0;
+        gameIsDone = false;
+    }
+
+    HumanGuessesGame(RandomDouble randGen){
+        //Random randGen = new Random();
+        this.target = randGen.nextInt(UPPER_BOUND) + 1;
+        //this.target = target;
 
         numGuesses = 0;
         gameIsDone = false;
