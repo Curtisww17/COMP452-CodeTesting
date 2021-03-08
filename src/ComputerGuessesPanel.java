@@ -8,10 +8,11 @@ import java.util.function.Consumer;
  * Displays the computer's guesses and processes human's answers
  * Tracks the computer's guesses
  *
- * TODO: refactor this class
+ *
  */
 public class ComputerGuessesPanel extends JPanel {
 
+    /*
     public void setNumGuesses(int numGuesses) {
         this.numGuesses = numGuesses;
     }
@@ -26,6 +27,14 @@ public class ComputerGuessesPanel extends JPanel {
 
     public void setLowerBound(int lowerBound) {
         this.lowerBound = lowerBound;
+    }*/
+
+    public ComputerGuessesPanel(int numG, int upperB, int lowerB, int lastG){
+        numGuesses = numG;
+        upperBound = upperB;
+        lowerBound = lowerB;
+        lastGuess = lastG;
+
     }
 
     private int numGuesses;
