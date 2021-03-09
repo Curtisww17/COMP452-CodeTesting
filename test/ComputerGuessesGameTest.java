@@ -12,8 +12,25 @@ public class ComputerGuessesGameTest {
         //higher
         assertEquals(377, g.higher());
 
-        assertEquals(2, g.getNumGuesses());
+        assertEquals(3, g.getNumGuesses());
         assertEquals(377, g.getLastGuess());
     }
 
+    @Test
+    void boundsTest(){
+        ComputerGuessesGame g = new ComputerGuessesGame();
+
+        for (int i = 0; i < 8; i++) {
+            g.higher();
+        }
+
+        assertEquals(1000, g.higher());
+
+        g = new ComputerGuessesGame();
+
+        for (int i = 0; i < 8; i++) {
+            g.lower();
+        }
+        assertEquals(1, g.lower());
+    }
 }
