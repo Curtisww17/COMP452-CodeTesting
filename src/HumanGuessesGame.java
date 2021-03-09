@@ -16,17 +16,11 @@ public class HumanGuessesGame {
 
 
     HumanGuessesGame(){
-        Random randGen = new Random();
-        this.target = randGen.nextInt(UPPER_BOUND) + 1;
-        //this.target = target;
-
-        numGuesses = 0;
-        gameIsDone = false;
+        this(new Random());
     }
 
-    HumanGuessesGame(RandomDouble randGen){
-        //Random randGen = new Random();
-        this.target = randGen.nextInt(UPPER_BOUND) + 1;
+    HumanGuessesGame(Random rand){
+        this.target = rand.nextInt(UPPER_BOUND) + 1;
 
         numGuesses = 0;
         gameIsDone = false;

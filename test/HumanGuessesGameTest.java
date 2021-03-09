@@ -27,6 +27,7 @@ public class HumanGuessesGameTest {
 
     @Test
     void isDoneTest() {
+        //using dependency injection
         HumanGuessesGame hgg = new HumanGuessesGame(new RandomDouble(500));
         assertFalse(hgg.isDone());
         assertEquals(hgg.makeGuess(501), GuessResult.CORRECT);
