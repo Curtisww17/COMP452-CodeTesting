@@ -15,6 +15,19 @@ public class ComputerGuessesGame {
     private int upperBound; // correct number is <= upperBound
     private int lowerBound; // correct number is >= lowerBound
 
+    public ComputerGuessesGame(){
+        numGuesses = 0;
+        upperBound = 1000;
+        lowerBound = 1;
+    }
+
+    public ComputerGuessesGame(int ng, int lg){
+        numGuesses = ng;
+        upperBound = 1000;
+        lowerBound = 1;
+        lastGuess = lg;
+    }
+
     public int lower(){
         upperBound = Math.min(upperBound, lastGuess);
         numGuesses += 1;
