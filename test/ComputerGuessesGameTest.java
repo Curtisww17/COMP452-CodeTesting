@@ -16,10 +16,4 @@ public class ComputerGuessesGameTest {
         assertEquals(377, g.getLastGuess());
     }
 
-
-    @Test
-    void k(){
-        ComputerGuessesGame g = new ComputerGuessesGame();
-
-    }
 }
